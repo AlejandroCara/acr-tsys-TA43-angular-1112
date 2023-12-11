@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+              <h2 id="charDetailsName">{{character.name}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                <img src="{{character.image}}" alt="" id="charDetailsImage">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card text-bg-dark" id="header">
+            <div class="card-body" id="charDetailsStatus">
+                Status : {{character.status}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card text-bg-dark" >
+            <div class="card-body" id="charDetailsSpecies">
+                Species : {{character.species}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card text-bg-dark" >
+            <div class="card-body" id="charDetailsGender">
+                Gender : {{character.gender}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card text-bg-dark">
+            <div class="card-body" id="charDetailsOrigin">
+                Origin : {{character.origin.name}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn btn-warning col-2" (click)="sendDataToEditForm(character.id)">Edit</button>
+        <button class="btn btn-danger col-2" (click)="characterDelete(character.id)">Delete</button>
+    </div>
+</div>

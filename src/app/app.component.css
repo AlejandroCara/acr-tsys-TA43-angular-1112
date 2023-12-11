@@ -1,0 +1,8 @@
+.navbar {
+    padding-left: 30px;
+    padding-right: 100px;
+}
+
+a:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+img {
+    width: 600px;
+    height: 181px;
+}
+
+.container {
+    flex-direction: column;
+    color: white;
+}
