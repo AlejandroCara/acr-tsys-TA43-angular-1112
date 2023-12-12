@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Character } from './models/character.model';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class RickapiService {
   apiUrl: string = "http://localhost:3000/character/";
   tmpCharacter: Character = new Character;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private route: Router) { 
   }
 
   getCharacter(){
@@ -56,8 +57,18 @@ export class RickapiService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 
+  update(character: Character): Observable<any>{
+    return this.http.put(`${this.apiUrl}/${character.id}`, character);
+  }
+
   //Recibe los datos de un personaje para almacenarlos
   sendEditToForm(character: Character){
     this.tmpCharacter = character;
+    this.route.navigateByUrl('character-form')
+    console.log(character);
+  }
+
+  getEditData(): Character{
+    return this.tmpCharacter;
   }
 }

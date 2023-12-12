@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RickapiService } from '../rickapi.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Character } from '../models/character.model';
+import { Origin } from '../models/origin.model';
 
 @Component({
   selector: 'app-character',
@@ -37,16 +38,15 @@ export class CharacterComponent implements OnInit{
   sendDataToEditForm(id: number){
 
     let character: Character = new Character();
+    let origin: Origin = new Origin();
     character.id = id;
     character.name = (<HTMLInputElement>document.getElementById("charDetailsName")).innerHTML;
     character.image = (<HTMLInputElement>document.getElementById("charDetailsImage")).src;
     character.status = (<HTMLInputElement>document.getElementById("charDetailsStatus")).innerHTML.split(":")[1].trim();
     character.species = (<HTMLInputElement>document.getElementById("charDetailsSpecies")).innerHTML.split(":")[1].trim();
     character.gender = (<HTMLInputElement>document.getElementById("charDetailsGender")).innerHTML.split(":")[1].trim();
-    character.origin = {
-      name: (<HTMLInputElement>document.getElementById("charDetailsOrigin")).innerHTML.split(":")[1].trim()
-    }
-    
+    origin.name = (<HTMLInputElement>document.getElementById("charDetailsOrigin")).innerHTML.split(":")[1].trim();
+    character.origin = origin;
     this.rickapi.sendEditToForm(character);
   }
 }

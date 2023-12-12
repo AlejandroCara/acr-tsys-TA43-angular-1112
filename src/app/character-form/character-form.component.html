@@ -1,17 +1,17 @@
-<div class="container">
+<div class="container mt-4">
     <div class="row">
         <p>Id:</p>
         <input type="number" name="" id="formId">
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Name:</p>
         <input type="text" name="" id="formName">
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Image:</p>
         <input type="text" name="" id="formImage">
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Status:</p>
         <select name="" id="formStatus">
             <option value="Alive">Alive</option>
@@ -19,18 +19,20 @@
             <option value="Unkown">Unkown</option>
         </select>
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Species:</p>
         <input type="text" name="" id="formSpecies">
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Gender:</p>
         <input type="text" name="" id="formGender">
     </div>
-    <div class="row">
+    <div class="row mt-3">
         <p>Origin:</p>
         <input type="text" name="" id="formOrigin">
     </div>
-    <button class="btn btn-primary" (click)="onAdd()" id="addButton">Save</button>
-    <button class="btn btn-primary" (click)="onAdd()" id="editButton" hidden>Save</button>
+    <div class="row">
+        <button class="btn btn-primary col-3 mt-4" (click)="onAdd()" id="addButton">Save</button>
+        <button class="btn btn-primary col-3 mt-4" (click)="onEdit()" id="editButton" hidden>Save</button>
+    </div>
 </div>

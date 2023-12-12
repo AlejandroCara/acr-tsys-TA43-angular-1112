@@ -1,3 +1,5 @@
+import { Origin } from "./origin.model";
+
 export class Character {
     id: number | undefined;
     name: string | undefined;
@@ -5,5 +7,5 @@ export class Character {
     status: string | undefined;
     species: string | undefined;
     gender: string | undefined;
-    origin: object | undefined;
+    origin: Origin | undefined;
 }
